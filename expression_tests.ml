@@ -52,8 +52,7 @@ let test () =
     unit_test (evaluate(derivative (parse "x^3 +8")) 5. = 75.)
       "derivative pow no val";
   unit_test (evaluate(derivative (parse "x^ (2 * x)")) 1. = 4.)
-    "derivative pow no val";
-  (* this ain't working *)
+    "derivative pow val";
   unit_test (evaluate(derivative (parse "4 * x - x ^ 3")) 2. = -8.)
     "derivative sub";
     unit_test (evaluate(derivative (parse "4 * x + x ^ 3")) 2. = 16.)
@@ -73,9 +72,6 @@ let test () =
     "find_zero x-4";
     unit_test (find_zero (parse "x ^ 2 - 6") 0. 0.001 50 = None)
       "find_zero x^2-6";
-    
-
-
 
   () ;;
 
